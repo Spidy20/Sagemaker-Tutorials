@@ -1,7 +1,7 @@
 ## Tutorial-1 ► Build and Deploy Sklearn model with Custom Script in Sagemaker
 
 ### [Watch this tutorial►](https://youtu.be/YWmnD_QcZQU)
-<img src="https://github.com/Spidy20/Fruit_Vegetable_Recognition/blob/master/yt_thumb.jpg">
+<img src="https://github.com/Spidy20/Sagemaker-Tutorials/blob/master/Tutorial%20-%201%20Sagemaker%20SKLearn%20Custom%20Script%20Mode/yt_thumb.jpg">
 
 
 - In this tutorial I have explained how we can build and deploy sklearn model with own custom script in Sagemaker environment. 
