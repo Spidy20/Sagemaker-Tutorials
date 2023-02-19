@@ -3,7 +3,7 @@
 
 In this repository, I will upload required notebooks, data and scripts which is important for the tutorial. 
 
-- Tutorial-1 ► In this tutorial I have explained how we can build and deploy sklearn model with own custom script in Sagemaker environment. 
+- [Tutorial-1 ►](https://github.com/Spidy20/Sagemaker-Tutorials/tree/master/Tutorial%20-%201%20Sagemaker%20SKLearn%20Custom%20Script%20Mode) In this tutorial I have explained how we can build and deploy sklearn model with own custom script in Sagemaker environment. 
 
 **More tutorials are coming......**
 
