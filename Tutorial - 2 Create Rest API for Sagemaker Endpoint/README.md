@@ -1,7 +1,7 @@
 ## Tutorial - 2 Create Rest API for Sagemaker Endpoint
 
 ### [Watch this tutorial►](https://youtu.be/YWmnD_QcZQU)
-<img src="https://github.com/Spidy20/Sagemaker-Tutorials/blob/master/Tutorial%20-%201%20Sagemaker%20SKLearn%20Custom%20Script%20Mode/yt_thumb.jpg">
+<img src="https://github.com/Spidy20/Sagemaker-Tutorials/blob/master/Tutorial%20-%202%20Create%20Rest%20API%20for%20Sagemaker%20Endpoint/yt_thumb_2.jpg">
 
 
 - In this tutorial, I have explained how we can create Rest API for Sagemaker Endpoint using AWS Lambda + API Gateway.
