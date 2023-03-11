@@ -1,6 +1,6 @@
 ## Tutorial - 2 Create Rest API for Sagemaker Endpoint
 
-### [Watch this tutorial►](https://youtu.be/YWmnD_QcZQU)
+### [Watch this tutorial►](https://youtu.be/hLzEHsUSHq4)
 <img src="https://github.com/Spidy20/Sagemaker-Tutorials/blob/master/Tutorial%20-%202%20Create%20Rest%20API%20for%20Sagemaker%20Endpoint/yt_thumb_2.jpg">
 
 
