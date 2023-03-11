@@ -1,5 +1,5 @@
 ## Sagemaker Tutorial Series
-### [Playlist Link ►](https://youtu.be/HTSDryllx0Y)
+### [Playlist Link ►](https://www.youtube.com/playlist?list=PLsT53VV2LIIEw5q8UadePwjrNcVGHVf1W)
 
 In this repository, I will upload required notebooks, data and scripts which is important for the tutorial. 
 
