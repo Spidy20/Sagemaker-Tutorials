@@ -4,7 +4,7 @@
 In this repository, I will upload required notebooks, data and scripts which is important for the tutorial. 
 
 - [Tutorial-1 ►](https://github.com/Spidy20/Sagemaker-Tutorials/tree/master/Tutorial%20-%201%20Sagemaker%20SKLearn%20Custom%20Script%20Mode) Build and Deploy Sklearn model with Custom Script in Sagemaker. 
-- Tutorial-2 ► In this tutorial, I have explained how we can create Rest API for Sagemaker Endpoint using AWS Lambda + API Gateway.
+- [Tutorial-2 ►](https://github.com/Spidy20/Sagemaker-Tutorials/tree/master/Tutorial%20-%202%20Create%20Rest%20API%20for%20Sagemaker%20Endpoint) In this tutorial, I have explained how we can create Rest API for Sagemaker Endpoint using AWS Lambda + API Gateway.
 
 
 **More tutorials are coming......**
