@@ -1,7 +1,7 @@
 ## Tutorial - 3 Building a Custom Algorithm in Amazon SageMaker
 
 [Watch the tutorial here ►](https://youtu.be/_OjFubgXcWQ)
-![Tutorial Thumbnail](https://github.com/Spidy20/Sagemaker-Tutorials/blob/master/Tutorial%20-%202%20Create%20Rest%20API%20for%20Sagemaker%20Endpoint/yt_thumb_2.jpg)
+![Tutorial Thumbnail](https://github.com/Spidy20/Sagemaker-Tutorials/blob/master/Tutorial%20-%203%20Sagemaker%20Build%20Custom%20Algorithm/yt_thumb.jpg)
 
 ### Overview
 
