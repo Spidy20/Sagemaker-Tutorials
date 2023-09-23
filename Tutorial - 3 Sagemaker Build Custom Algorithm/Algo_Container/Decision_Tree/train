@@ -1,0 +1,78 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
+
+import json
+import os
+import pickle
+import sys
+import traceback
+
+import pandas as pd
+from sklearn import tree
+
+# Important path for sagemaker
+prefix = '/opt/ml/'
+
+input_path = prefix + 'input/data'
+output_path = os.path.join(prefix, 'output')
+model_path = os.path.join(prefix, 'model')
+param_path = os.path.join(prefix, 'input/config/hyperparameters.json')
+
+# Defining training channel
+channel_name = 'training'
+training_path = os.path.join(input_path, channel_name)
+
+
+# The function to execute the training.
+def train():
+    print('[INFO] Starting the training.....')
+    try:
+        # Read in any hyperparameters that the user passed with the training job
+        with open(param_path, 'r') as tc:
+            trainingParams = json.load(tc)
+        print("[INFO] Hyperparameters: ", trainingParams)
+        # Take the set of files and read them all into a single pandas dataframe
+        input_files = [os.path.join(training_path, file) for file in os.listdir(training_path)]
+        if len(input_files) == 0:
+            raise ValueError(('There are no files in {}.\n' +
+                              'This usually indicates that the channel ({}) was incorrectly specified,\n' +
+                              'the data specification in S3 was incorrectly specified or the role specified\n' +
+                              'does not have permission to access the data.').format(training_path, channel_name))
+        print("[INFO] Found following training files: ", input_files)
+        raw_data = [pd.read_csv(file, header=None) for file in input_files if file.endswith(".csv")]
+        train_data = pd.concat(raw_data)
+
+        # labels are in the first column
+        train_y = train_data.iloc[:, 0]
+        train_X = train_data.iloc[:, 1:]
+
+        max_leaf_nodes = int(trainingParams.get('max_leaf_nodes',2))
+        random_state = int(trainingParams.get('random_state', 42))
+        criterion = trainingParams.get('criterion', "gini")
+
+        # Now use scikit-learn's decision tree classifier to train the model.
+        clf = tree.DecisionTreeClassifier(criterion=criterion, max_leaf_nodes=max_leaf_nodes, random_state=random_state)
+        clf = clf.fit(train_X, train_y)
+
+        # save the model
+        with open(os.path.join(model_path, 'decision-tree-model.pkl'), 'wb') as out:
+            pickle.dump(clf, out)
+        print('[INFO] Training complete.')
+        print(f'[INFO] Model saved at: {model_path}.')
+    except Exception as e:
+
+        trc = traceback.format_exc()
+        with open(os.path.join(output_path, 'failure'), 'w') as s:
+            s.write('[INFO] Exception during training: ' + str(e) + '\n' + trc)
+        # Printing this causes the exception to be in the training job logs, as well.
+        print('[INFO] Exception during training: ' + str(e) + '\n' + trc, file=sys.stderr)
+        # A non-zero exit code causes the training job to be marked as Failed.
+        sys.exit(255)
+
+
+if __name__ == '__main__':
+    train()
+
+    # A zero exit code causes the job to be marked a Succeeded.
+    sys.exit(0)
