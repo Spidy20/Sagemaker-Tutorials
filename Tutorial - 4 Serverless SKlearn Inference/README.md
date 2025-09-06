@@ -1,6 +1,6 @@
 ## Tutorial - 4 Serverless Sklearn Inference with Lambda + API Gateway
 
-![Tutorial Thumbnail](https://github.com/Spidy20/Sagemaker-Tutorials/blob/master/Tutorial%20-%203%20Sagemaker%20Build%20Custom%20Algorithm/yt_thumb.jpg)
+![Tutorial Thumbnail](https://github.com/Spidy20/Sagemaker-Tutorials/blob/master/Tutorial%20-%204%20Serverless%20SKlearn%20Inference/yt_thumbnail.jpg)
 [Watch the tutorial here ►](https://youtu.be/_OjFubgXcWQ)
 
 ### Overview
