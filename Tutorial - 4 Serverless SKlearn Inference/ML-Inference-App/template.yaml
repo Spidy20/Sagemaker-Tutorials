@@ -1,0 +1,47 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: >
+  APIGateway_MainFunctions
+  SAM stack deploying the Customer Churn Inference Lambda with S3 Full Access.
+
+Globals:
+  Function:
+    Timeout: 300
+    MemorySize: 1024
+    EphemeralStorage:
+      Size: 1024          # Increased /tmp size to 4 GB (max allowed: 10240)
+
+
+Resources:
+  ### Inference API Lambda
+  ServerlessModelInferenceFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: serverless-model-inference
+      Description: Runs Iris inference, reading inputs from API requests body.
+      CodeUri: API
+      Handler: Lambda_Functions.inference_lambda_handler.lambda_handler
+      Runtime: python3.10
+      Events:
+        InferenceRoute:
+          Type: Api
+          Properties:
+            Path: /inference
+            Method: POST
+      Architectures:
+        - x86_64
+      Policies:
+        - AmazonS3FullAccess
+        - AWSLambdaBasicExecutionRole
+    Metadata:
+      BuildMethod: python3.10
+      BuildProperties:
+        RequirementsFile: API/requirements.txt
+        PipInstallArgs:
+          - "--no-deps"
+
+Outputs:
+  ServerlessModelInferenceFunctionArn:
+    Description: ARN of the Customer Churn Inference Lambda
+    Value: !GetAtt  ServerlessModelInferenceFunction.Arn
+

@@ -41,4 +41,4 @@ If you find this tutorial helpful, please consider giving it a star⭐ or forkin
 
 - [Buy me a Coffee☕](https://www.buymeacoffee.com/spidy20)
 - [Donate via PayPal (Your support inspires us to create more projects)](https://www.paypal.me/spidy1820)
-
+- Donate me via UPI🇮🇳  - kushalbhavsar1@ybl
